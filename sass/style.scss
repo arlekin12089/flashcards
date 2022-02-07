@@ -1,0 +1,28 @@
+// Variables
+// --------------------
+@import 'variables/colors';
+@import 'variables/typography';
+
+// Mixins
+// --------------------
+@import 'mixins/mixins';
+
+// Reset and base files
+// --------------------
+@import 'base/reset';
+@import 'base/base';
+@import 'base/font';
+
+
+// Objects
+// --------------------
+@import "objects/headings";
+@import "objects/btn";
+
+// Layouts
+// --------------------
+@import "layouts/index";
+
+
+//Fonts
+// --------------------

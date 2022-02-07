@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Flashcards</title>
+	<link rel="stylesheet" href="sass/style.css" />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,700;1,400&family=Roboto:wght@400;500;700&display=swap"
+		rel="stylesheet" />
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+		integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+</head>
+<body>
+	<div class="container">
+		<div class="card__intro">
+			<h1>Flashcards</h1>
+			<p>It is a popular way to memorize words and concepts. Cards have 2 sides that change when you press a button.</p>
+			<button id="show-btn">Add a new card</button>
+		</div>
+		<div class="card__form">
+			<a href="#" class="card__close"><i class="fas fa-window-close"></i></a>
+			<h2>Create a flashcard</h2>
+			<form id="card-form">
+				<div class="card-form__group">
+					<label for="question">Card question:</label>
+					<textarea name="answer" id="question" cols="30" rows="10" placeholder="Type your question..."></textarea>
+				</div>
+				<div class="card-form__group">
+					<label for="answer">Card answer:</label>
+					<textarea name="answer" id="answer" cols="30" rows="10" placeholder="Type your answer..."></textarea>
+				</div>
+				<button type="submit" class="btn btn--green">Save card</button>
+			</form>
+		</div>
+	</div>
+	<script src="scripts/script.js"></script>
+</body>
+</html>
