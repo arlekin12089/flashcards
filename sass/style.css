@@ -180,6 +180,37 @@ img {
   max-width: 100%;
 }
 
+.text {
+  color: #576366;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", Verdana, sans-serif;
+}
+
+h1 {
+  color: #2a5d81;
+  font-size: 45px;
+  font-size: 2.8125rem;
+  line-height: 50px;
+}
+
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-size: 55px;
+    font-size: 3.4375rem;
+    line-height: 60px;
+  }
+}
+
 .btn {
   font-size: 18px;
   font-size: 1.125rem;
@@ -192,19 +223,52 @@ img {
   font-family: "Roboto", Verdana, sans-serif;
   text-transform: capitalize;
   font-weight: 500;
-  color: #000000;
+  color: #ffffff;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   cursor: pointer;
   height: 45px;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+}
+
+.btn--large {
+  padding: 10px 100px;
+  height: 50px;
 }
 
 .btn--green {
   background-color: #00D377;
-  color: #ffffff;
 }
 
 .btn--green:hover {
   background-color: #00B950;
+}
+
+.btn--blue {
+  background: #2a5d81;
+}
+
+.btn--blue:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#004652), to(#004652));
+  background: linear-gradient(#004652, #004652);
+}
+
+.card__intro {
+  max-width: 500px;
+  margin: 100px auto 0;
+}
+
+.card__intro h1, .card__intro p {
+  margin-bottom: 30px;
+}
+
+.card__form {
+  display: none;
+}
+
+.card__img {
+  max-width: 300px;
+  margin: 30px auto;
 }
 /*# sourceMappingURL=style.css.map */

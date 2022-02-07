@@ -1,0 +1,5 @@
+.text {
+	color: $light-grey;
+	@include font-size(18);
+	line-height: 1.5;
+}

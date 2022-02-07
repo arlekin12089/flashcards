@@ -1,0 +1,21 @@
+//Homepage flashcard
+
+.card{
+	&__intro {
+		max-width: 500px;
+		margin: 100px auto 0;
+		h1,p {
+			margin-bottom: 30px;
+		}
+
+	}
+
+	&__form{
+		display: none;
+	}
+
+	&__img {
+		max-width: 300px;
+		margin: 30px auto;
+	}
+}

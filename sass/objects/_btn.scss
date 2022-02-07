@@ -9,16 +9,28 @@
 	font-family: $font-primary;
 	text-transform: capitalize;
 	font-weight: 500;
-	color: $black;
+	color: $white;
+	user-select: none;
 	cursor: pointer;
 	height: 45px;
-	transition: all 0.3s ease-in-out;
+
+	&--large {
+	padding: 10px 100px;
+	height: 50px;
+	}
 
 	&--green {
 		background-color: $green;
-		color: $white;
 		&:hover {
 			background-color: $dark-green;
+		}
+	}
+
+	&--blue {
+		background: $blue;
+
+		&:hover{
+			background: linear-gradient(#004652, #004652);
 		}
 	}
 
