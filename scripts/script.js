@@ -7,6 +7,7 @@ const saveBtn = document.getElementById('save-card');
 const errorMessage = document.querySelector('.error-message');
 const cardList = document.getElementById('card-list');
 const clearBtn = document.getElementById('clear');
+const flipBtn = document.querySelector('.flip-button');
 
 // Store DOM cards
 const cardsList = [];
@@ -34,8 +35,6 @@ function createCard(info, index) {
     <p class="card-front">
       ${info.front}
     </p>
-  </div>
-  <div class="inner-card-back">
     <p class="card-back">
       ${info.back}
     </p>
@@ -99,4 +98,18 @@ clearBtn.addEventListener('click', () => {
   localStorage.clear();
   cardList.innerHTML = '';
   window.location.reload();
+});
+
+// Click to show card front or back
+
+flipBtn.addEventListener('click', (e) => {
+  const x = document.querySelector('.card-front');
+  const y = document.querySelector('.card-back');
+  if (x.style.display === 'none') {
+    x.style.display = 'block';
+    y.style.display = 'none';
+  } else {
+    x.style.display = 'none';
+    y.style.display = 'block';
+  }
 });
