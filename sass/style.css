@@ -248,8 +248,14 @@ h2 {
 }
 
 .btn--large {
-  padding: 10px 100px;
+  padding: 10px 70px;
   height: 50px;
+}
+
+@media only screen and (min-width: 768px) {
+  .btn--large {
+    padding: 10px 100px;
+  }
 }
 
 .btn--green {
@@ -270,8 +276,15 @@ h2 {
 }
 
 .card__intro {
-  max-width: 500px;
-  margin: 100px auto 0;
+  max-width: 300px;
+  margin: 30px auto 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .card__intro {
+    max-width: 500px;
+    margin: 100px auto 0;
+  }
 }
 
 .card__intro h1,
@@ -350,8 +363,15 @@ h2 {
 }
 
 .card__img {
-  max-width: 300px;
+  max-width: 150px;
   margin: 30px auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .card__img {
+    max-width: 200px;
+    margin: 30px auto;
+  }
 }
 
 .show {

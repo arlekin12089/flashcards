@@ -2,8 +2,12 @@
 
 .card {
   &__intro {
+    max-width: 300px;
+    margin: 30px auto 0;
+	@include breakpoint(small-max) {
     max-width: 500px;
     margin: 100px auto 0;
+  }
 
     h1,
     p {
@@ -69,8 +73,12 @@
   }
 
   &__img {
-    max-width: 300px;
+    max-width: 150px;
     margin: 30px auto;
+	@include breakpoint(small-max) {
+    max-width: 200px;
+    margin: 30px auto;
+  }
   }
 }
 
