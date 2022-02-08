@@ -6,10 +6,7 @@ const answerBack = document.getElementById('answer');
 const saveBtn = document.getElementById('save-card');
 const errorMessage = document.querySelector('.error-message');
 const cardList = document.getElementById('card-list');
-const deleteBtn = document.querySelector('#remove-button');
-const flipBtn = document.querySelector('#flip-button');
-const cardFront = document.querySelector('#card-front');
-const cardBack = document.querySelector('#card-back');
+const clearBtn = document.getElementById('clear');
 
 // Store DOM cards
 const cardsList = [];
@@ -97,9 +94,8 @@ saveBtn.addEventListener('click', (e) => {
 });
 
 // Clear cards button
-
-// deleteBtn.addEventListener("click", () => {
-//   localStorage.clear();
-//   cardList.innerHTML = "";
-//   window.location.reload();
-// });
+clearBtn.addEventListener('click', () => {
+  localStorage.clear();
+  cardList.innerHTML = '';
+  window.location.reload();
+});
