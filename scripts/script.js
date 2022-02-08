@@ -6,6 +6,7 @@ const answerBack = document.getElementById("answer");
 const saveBtn = document.getElementById("save-card");
 const errorMessage = document.querySelector(".error-message");
 const cardList = document.getElementById("card-list");
+const clearBtn = document.getElementById("clear");
 
 // Store DOM cards
 const cardsList = [];
@@ -90,3 +91,9 @@ saveBtn.addEventListener("click", (e) => {
   }
 });
 
+// Clear cards button
+clearBtn.addEventListener("click", () => {
+  localStorage.clear();
+  cardList.innerHTML = "";
+  window.location.reload();
+});
