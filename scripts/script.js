@@ -1,18 +1,22 @@
-const showBtn = document.getElementById("show-btn");
-const addContainer = document.getElementById("card-window");
-const closeBtn = document.getElementById("close");
-const questionFront = document.getElementById("question");
-const answerBack = document.getElementById("answer");
-const saveBtn = document.getElementById("save-card");
-const errorMessage = document.querySelector(".error-message");
-const cardList = document.getElementById("card-list");
+const showBtn = document.getElementById('show-btn');
+const addContainer = document.getElementById('card-window');
+const closeBtn = document.getElementById('close');
+const questionFront = document.getElementById('question');
+const answerBack = document.getElementById('answer');
+const saveBtn = document.getElementById('save-card');
+const errorMessage = document.querySelector('.error-message');
+const cardList = document.getElementById('card-list');
+const deleteBtn = document.querySelector('#remove-button');
+const flipBtn = document.querySelector('#flip-button');
+const cardFront = document.querySelector('#card-front');
+const cardBack = document.querySelector('#card-back');
 
 // Store DOM cards
 const cardsList = [];
 
 //Show add container block
-showBtn.addEventListener("click", () => addContainer.classList.add("show"));
-closeBtn.addEventListener("click", () => addContainer.classList.remove("show"));
+showBtn.addEventListener('click', () => addContainer.classList.add('show'));
+closeBtn.addEventListener('click', () => addContainer.classList.remove('show'));
 
 // Store cards
 const cardsInfo = getCardsInfo();
@@ -24,18 +28,18 @@ function createCards() {
 
 // Create a single card in DOM
 function createCard(info, index) {
-  const card = document.createElement("div");
-  card.classList.add("card");
+  const card = document.createElement('div');
+  card.classList.add('card');
 
   card.innerHTML = `
-    <div class="inner-card">
+    <div class="card-container">
   <div class="inner-card-front">
-    <p>
+    <p class="card-front">
       ${info.front}
     </p>
   </div>
   <div class="inner-card-back">
-    <p>
+    <p class="card-back">
       ${info.back}
     </p>
   </div>
@@ -43,7 +47,7 @@ function createCard(info, index) {
 </div>
   
   `;
-  card.addEventListener("click", () => card.classList.toggle("show-answer"));
+  card.addEventListener('click', () => card.classList.toggle('show-answer'));
   // Add to DOM cards
   cardsList.push(card);
   cardList.appendChild(card);
@@ -51,33 +55,33 @@ function createCard(info, index) {
 
 // Get cards from local storage
 function getCardsInfo() {
-  const cards = JSON.parse(localStorage.getItem("cards"));
+  const cards = JSON.parse(localStorage.getItem('cards'));
   return cards === null ? [] : cards;
 }
 
 // Add card to local storage
 function setCardsInfo(cards) {
-  localStorage.setItem("cards", JSON.stringify(cards));
+  localStorage.setItem('cards', JSON.stringify(cards));
   window.location.reload();
 }
 
 createCards();
 
 // Add new card
-saveBtn.addEventListener("click", (e) => {
+saveBtn.addEventListener('click', (e) => {
   e.preventDefault();
   const front = questionFront.value;
   const back = answerBack.value;
-  if (front !== "" && back !== "") {
+  if (front !== '' && back !== '') {
     const newCard = { front, back };
     createCard(newCard);
-    front.value = "";
-    back.value = "";
-    addContainer.classList.remove("show");
+    front.value = '';
+    back.value = '';
+    addContainer.classList.remove('show');
     cardsInfo.push(newCard);
     setCardsInfo(cardsInfo);
   } else {
-    errorMessage.classList.add("show");
+    errorMessage.classList.add('show');
   }
 });
 
@@ -88,4 +92,3 @@ saveBtn.addEventListener("click", (e) => {
 //   cardList.innerHTML = "";
 //   window.location.reload();
 // });
-
