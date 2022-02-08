@@ -45,7 +45,6 @@ function createCard(info, index) {
   </div>
   <a href="#" id="delete"><i class="far fa-trash-alt"></i></a>
 </div>
-  
   `;
   card.addEventListener('click', () => card.classList.toggle('show-answer'));
   // Add to DOM cards
@@ -75,6 +74,18 @@ saveBtn.addEventListener('click', (e) => {
   if (front !== '' && back !== '') {
     const newCard = { front, back };
     createCard(newCard);
+    front.value = '';
+    back.value = '';
+    addContainer.classList.remove('show');
+    const deleteBtn = document.getElementById('delete');
+    // Clear cards button
+
+    deleteBtn.addEventListener('click', () => {
+      localStorage.clear();
+      cardList.innerHTML = '';
+      window.location.reload();
+    });
+
     front.value = '';
     back.value = '';
     addContainer.classList.remove('show');
