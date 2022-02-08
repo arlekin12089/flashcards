@@ -32,12 +32,14 @@ function createCard(info, index) {
   card.innerHTML = `
     <div class="card-container">
   <div class="inner-card-front">
+	<h2 class="mb20">Question:</h2>
     <p class="card-front">
       ${info.front}
     </p>
 	 </div>
 	 <div class="inner-card-back">
-    <p class="inner-card-back">
+	 <h2 class="mb20">Answer:</h2>
+    <p class="card-back">
       ${info.back}
     </p>
   </div>
