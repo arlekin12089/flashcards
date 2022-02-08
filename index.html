@@ -23,10 +23,12 @@
 			</div>
 			<button id="show-btn" class="btn btn--blue btn--large">Add a new card</button>
 		</div>
-		<div class="card__form">
-			<a href="#" class="card__close"><i class="fas fa-window-close"></i></a>
-			<h2>Create a flashcard</h2>
-			<form id="card-form">
+	</div>
+	<div class="card-window" id="card-window">
+		<div class="card-window__wrap">		
+			<a href="#" class="card-window__close" id="close"><i class="fas fa-window-close"></i></a>
+			<h2 class="center">Create a flashcard</h2>
+			<form id="card-form" class="card-form">
 				<div class="card-form__group">
 					<label for="question">Card question:</label>
 					<textarea name="answer" id="question" cols="30" rows="10" placeholder="Type your question..."></textarea>
@@ -37,8 +39,8 @@
 				</div>
 				<button type="submit" class="btn btn--green">Save card</button>
 			</form>
+			</div>
 		</div>
-	</div>
 	<script src="scripts/script.js"></script>
 </body>
 </html>

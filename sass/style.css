@@ -211,6 +211,21 @@ h1 {
   }
 }
 
+h2 {
+  color: #000000;
+  font-size: 22px;
+  font-size: 1.375rem;
+  line-height: 30px;
+}
+
+@media only screen and (min-width: 768px) {
+  h2 {
+    font-size: 32px;
+    font-size: 2rem;
+    line-height: 20px;
+  }
+}
+
 .btn {
   font-size: 18px;
   font-size: 1.125rem;
@@ -259,16 +274,89 @@ h1 {
   margin: 100px auto 0;
 }
 
-.card__intro h1, .card__intro p {
+.card__intro h1,
+.card__intro p {
   margin-bottom: 30px;
 }
 
-.card__form {
+.card-form__group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.card-form__group label {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.card-form__group textarea {
+  font-size: 16px;
+  font-size: 1rem;
+  border: 1px solid rgba(87, 99, 102, 0.3);
+  padding: 20px;
+}
+
+.card-window {
   display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #edeff0;
+}
+
+.card-window__close {
+  position: absolute;
+  right: 20px;
+}
+
+.card-window__close i:before {
+  font-size: 24px;
+}
+
+.card-window__wrap {
+  max-width: 600px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #ffffff;
+  -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 20px;
+  position: relative;
+}
+
+.card-window__wrap h2 {
+  margin-bottom: 20px;
 }
 
 .card__img {
   max-width: 300px;
   margin: 30px auto;
+}
+
+.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=style.css.map */
