@@ -16,3 +16,13 @@ h1 {
     line-height: 60px;
   }
 }
+
+h2 {
+  color: $black;   
+  @include font-size(22);
+  line-height: 30px;
+  @include breakpoint(small-max) {
+    @include font-size(32);
+    line-height: 20px;
+  }
+}
