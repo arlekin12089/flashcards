@@ -35,7 +35,9 @@ function createCard(info, index) {
     <p class="card-front">
       ${info.front}
     </p>
-    <p class="card-back">
+	 </div>
+	 <div class="inner-card-back">
+    <p class="inner-card-back">
       ${info.back}
     </p>
   </div>
