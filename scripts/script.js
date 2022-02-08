@@ -7,13 +7,14 @@ const saveBtn = document.getElementById('save-card');
 const errorMessage = document.querySelector('.error-message');
 const cardList = document.getElementById('card-list');
 const clearBtn = document.getElementById('clear');
+const search = document.getElementById("search");
 
 // Store DOM cards
 const cardsList = [];
 
 //Show add container block
-showBtn.addEventListener('click', () => addContainer.classList.add('show'));
-closeBtn.addEventListener('click', () => addContainer.classList.remove('show'));
+showBtn.addEventListener("click", () => addContainer.classList.add("show"));
+closeBtn.addEventListener("click", () => addContainer.classList.remove("show"));
 
 // Store cards
 const cardsInfo = getCardsInfo();
@@ -25,8 +26,8 @@ function createCards() {
 
 // Create a single card in DOM
 function createCard(info, index) {
-  const card = document.createElement('div');
-  card.classList.add('card');
+  const card = document.createElement("div");
+  card.classList.add("card");
 
   card.innerHTML = `
     <div class="card-container">
@@ -46,58 +47,54 @@ function createCard(info, index) {
   <a href="#" id="flip"><i class="fas fa-redo-alt" id="flip-button"></i></a>
 </div>
   `;
-  card.addEventListener('click', () => card.classList.toggle('show-answer'));
+  card.addEventListener("click", () => card.classList.toggle("show-answer"));
   // Add to DOM cards
   cardsList.push(card);
   cardList.appendChild(card);
 }
-const raderaIcon = document.getElementById("#delete");
-raderaIcon.addEventListener("click",(e)=>{
-    let radera = e.target(document.querySelector(".card-container"))
-    radera.remove()
-})
 
 // Get cards from local storage
 function getCardsInfo() {
-  const cards = JSON.parse(localStorage.getItem('cards'));
+  const cards = JSON.parse(localStorage.getItem("cards"));
   return cards === null ? [] : cards;
 }
 
 // Add card to local storage
 function setCardsInfo(cards) {
-  localStorage.setItem('cards', JSON.stringify(cards));
+  localStorage.setItem("cards", JSON.stringify(cards));
   window.location.reload();
 }
 
 createCards();
 
 // Add new card
-saveBtn.addEventListener('click', (e) => {
+saveBtn.addEventListener("click", (e) => {
   e.preventDefault();
   const front = questionFront.value;
   const back = answerBack.value;
-  if (front !== '' && back !== '') {
+  if (front !== "" && back !== "") {
     const newCard = { front, back };
     createCard(newCard);
-    front.value = '';
-    back.value = '';
-    addContainer.classList.remove('show');
-    const deleteBtn = document.getElementById('delete');
+    front.value = "";
+    back.value = "";
+    addContainer.classList.remove("show");
+    const deleteBtn = document.getElementById("delete");
+
     // Clear cards button
 
-    deleteBtn.addEventListener('click', () => {
+    deleteBtn.addEventListener("click", () => {
       localStorage.clear();
-      cardList.innerHTML = '';
+      cardList.innerHTML = "";
       window.location.reload();
     });
 
-    front.value = '';
-    back.value = '';
-    addContainer.classList.remove('show');
+    front.value = "";
+    back.value = "";
+    addContainer.classList.remove("show");
     cardsInfo.push(newCard);
     setCardsInfo(cardsInfo);
   } else {
-    errorMessage.classList.add('show');
+    errorMessage.classList.add("show");
   }
 });
 
