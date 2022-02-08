@@ -9,4 +9,3 @@ closeBtn.addEventListener("click", () => addContainer.classList.remove("show"));
 
 // Add new card
 
-saveBtn.addEventListener("click", () => {});
