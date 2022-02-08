@@ -51,7 +51,7 @@ function createCard(info, index) {
   cardsList.push(card);
   cardList.appendChild(card);
 }
-const raderaIcon =document.querySelector="#delete"
+const raderaIcon = document.getElementById("#delete");
 raderaIcon.addEventListener("click",(e)=>{
     let radera = e.target(document.querySelector(".card-container"))
     radera.remove()
