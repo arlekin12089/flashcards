@@ -40,7 +40,8 @@ function createCard(info, index) {
       ${info.back}
     </p>
   </div>
-  <a href="#" id="delete"><i class="far fa-trash-alt"></i></a>
+  <a href="#" id="delete"><i class="far fa-trash-alt" id="remove-button"></i></a>
+  <a href="#"><i class="fas fa-angle-right" id="flip-button"></i></a>
 </div>
   `;
   card.addEventListener('click', () => card.classList.toggle('show-answer'));
