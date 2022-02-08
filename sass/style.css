@@ -275,6 +275,81 @@ h2 {
   background: linear-gradient(#004652, #004652);
 }
 
+.card {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  text-align: center;
+  margin: 20px;
+  min-height: 300px;
+  position: relative;
+  background: #2a5d81;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  .card {
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+  }
+}
+
+.card .inner-card-back {
+  display: none;
+}
+
+.card .inner-card-back,
+.card .inner-card-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+.card .inner-card-front {
+  background: #2a5d81;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.card.show-answer .inner-card-back {
+  background: #00D377;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.card-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
 .card__intro {
   max-width: 300px;
   margin: 30px auto 0;
@@ -375,6 +450,8 @@ h2 {
 }
 
 .card-container {
+  position: relative;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -387,20 +464,6 @@ h2 {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-}
-
-.card-container .card-front {
-  width: 300px;
-  height: 300px;
-  margin: 10px;
-  background: pink;
-}
-
-.card-container .card-back {
-  width: 300px;
-  height: 300px;
-  background: pink;
-  visibility: hidden;
 }
 
 .error-message {
@@ -416,5 +479,29 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+i {
+  font-size: 50px;
+  color: navy;
+  background-color: yellow;
+}
+
+#delete, #flip {
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+#flip {
+  right: 45px;
+}
+
+#remove-button, #flip-button {
+  font-size: 24px;
+  font-size: 1.5rem;
+  background-color: transparent;
+  color: #ffffff;
 }
 /*# sourceMappingURL=style.css.map */
