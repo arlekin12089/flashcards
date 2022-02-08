@@ -90,7 +90,10 @@
 
     &__close {
       position: absolute;
-      right: 20px;
+      right: 10px;
+	  top: 0;
+	  color: $dark-green;
+	  background: none;
 
       i:before {
         font-size: 24px;
@@ -172,7 +175,7 @@ right: 10px;
 #flip {
 right: 45px;
 }
-#remove-button, #flip-button {
+.icon {
 @include font-size(24);
 background-color: transparent;
 color: $white;
