@@ -7,7 +7,6 @@ const saveBtn = document.getElementById('save-card');
 const errorMessage = document.querySelector('.error-message');
 const cardList = document.getElementById('card-list');
 const clearBtn = document.getElementById('clear');
-const flipBtn = document.querySelector('.flip-button');
 
 // Store DOM cards
 const cardsList = [];
@@ -35,14 +34,14 @@ function createCard(info, index) {
     <p class="card-front">
       ${info.front}
     </p>
-	 </div>
-	 <div class="inner-card-back">
-    <p class="inner-card-back">
+  </div>
+  <div class="inner-card-back">
+    <p class="card-back">
       ${info.back}
     </p>
   </div>
-  <a href="#" id="delete"><i class="far fa-trash-alt icon" id="remove-button"></i></a>
-  <a href="#" id="flip"><i class="fas fa-redo-alt icon" id="flip-button"></i></a>
+  <a href="#" id="delete"><i class="far fa-trash-alt" id="remove-button"></i></a>
+  <a href="#" id="flip"><i class="fas fa-redo-alt" id="flip-button"></i></a>
 </div>
   `;
   card.addEventListener('click', () => card.classList.toggle('show-answer'));
@@ -50,6 +49,11 @@ function createCard(info, index) {
   cardsList.push(card);
   cardList.appendChild(card);
 }
+const raderaIcon =document.querySelector="#delete"
+raderaIcon.addEventListener("click",(e)=>{
+    let radera = e.target(document.querySelector(".card-container"))
+    radera.remove()
+})
 
 // Get cards from local storage
 function getCardsInfo() {
@@ -101,17 +105,3 @@ clearBtn.addEventListener('click', () => {
   cardList.innerHTML = '';
   window.location.reload();
 });
-
-// Click to show card front or back
-
-// flipBtn.addEventListener('click', (e) => {
-//   const x = document.querySelector('.card-front');
-//   const y = document.querySelector('.card-back');
-//   if (x.style.display === 'none') {
-//     x.style.display = 'block';
-//     y.style.display = 'none';
-//   } else {
-//     x.style.display = 'none';
-//     y.style.display = 'block';
-//   }
-// });
