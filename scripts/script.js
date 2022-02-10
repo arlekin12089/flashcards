@@ -8,7 +8,9 @@ const errorMessage = document.querySelector('.error-message');
 const cardWrapper = document.getElementById("card-list");
 const clearBtn = document.getElementById("clear");
 const search = document.getElementById("search");
-
+const searchBtn = document.getElementById("search-btn");
+const searchResults = document.getElementById("results");
+const errorSearch = document.getElementById("error-search");
 // Store DOM cards
 let cardsList = [];
 
@@ -100,4 +102,21 @@ clearBtn.addEventListener("click", () => {
   localStorage.clear();
   cardWrapper.innerHTML = "";
   window.location.reload();
+});
+
+//Search
+searchBtn.addEventListener("click", () => {
+  let searchValue = search.value.toLowerCase();
+  let filterCards = cardsInfo.filter((card) => {
+    return card.front.includes(searchValue) || card.back.includes(searchValue);
+  });
+  if (filterCards.length === 0) {
+    alert("There are no similar words!");
+  } else {
+    cardWrapper.innerHTML = "";
+    errorSearch.style.display = "none";
+    filterCards.forEach((card) => {
+      createCard(card);
+    });
+  }
 });

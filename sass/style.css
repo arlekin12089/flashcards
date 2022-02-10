@@ -537,4 +537,8 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
 }
+
+.error-search {
+  display: none;
+}
 /*# sourceMappingURL=style.css.map */
