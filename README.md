@@ -9,3 +9,4 @@ User can flip a card just to click on it.
 Project is created with: HTML, SASS, Vanilla JS, Local Storage
 
 ## Preview:
+<img width="786" alt="Screenshot 2022-02-10 at 17 37 57" src="https://user-images.githubusercontent.com/22168037/153455304-d107c267-935c-4812-afb6-dda19c955b45.png">
